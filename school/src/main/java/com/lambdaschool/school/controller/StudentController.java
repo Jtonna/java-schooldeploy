@@ -51,7 +51,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Successfully found the student", response = Student.class),
             @ApiResponse(code = 404, message = "Could not find a student", response = ErrorDetail.class)
     })
-    @GetMapping(value = "/Student/{StudentId}", produces = {"application/json"})
+    @GetMapping(value = "/student/{StudentId}", produces = {"application/json"})
     public ResponseEntity<?> getStudentById(
             @ApiParam(value = "Student ID", required = true, example = "1")
             @PathVariable Long StudentId)
@@ -81,7 +81,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Successfully created the student", response = void.class),
             @ApiResponse(code = 500, message = "Failed to create the student", response = ErrorDetail.class)
     })
-    @PostMapping(value = "/Student",
+    @PostMapping(value = "/student",
                  consumes = {"application/json"},
                  produces = {"application/json"})
     public ResponseEntity<?> addNewStudent(@Valid
@@ -103,7 +103,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Successfully updated the student", response = void.class),
             @ApiResponse(code = 500, message = "Failed to update the student", response = ErrorDetail.class)
     })
-    @PutMapping(value = "/Student/{Studentid}")
+    @PutMapping(value = "/student/{Studentid}")
     public ResponseEntity<?> updateStudent(
             @ApiParam(value = "Student ID", required = true, example = "1")
             @RequestBody Student updateStudent,
@@ -118,7 +118,7 @@ public class StudentController
             @ApiResponse(code = 201, message = "Succesfully deleted thje student", response = void.class),
             @ApiResponse(code = 500, message = "Failed to delete the student", response = ErrorDetail.class)
     })
-    @DeleteMapping("/Student/{Studentid}")
+    @DeleteMapping("/student/{Studentid}")
     public ResponseEntity<?> deleteStudentById(
             @ApiParam(value = "Student ID", required = true)
             @PathVariable long Studentid)
